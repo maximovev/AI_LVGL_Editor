@@ -1,0 +1,30 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2022/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LvglProjectEditor.Views.StyleEditor"
+             Title="Style Editor">
+
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,Auto">
+        <!-- Основная информация -->
+        <Frame Grid.Row="0" Grid.Column="0" Padding="10" CornerRadius="5" Margin="0,0,0,10">
+            <StackLayout Spacing="10">
+                <Entry Placeholder="Style Name" x:Name="StyleNameEntry" />
+                <Entry Placeholder="Style Type" x:Name="StyleTypeEntry" />
+                
+                <Label Text="Background Color:" FontSize="12" />
+                <Picker x:Name="BackgroundColorPicker" ItemsSource="Red, Green, Blue, Yellow, Black, White" SelectedItem="Red" />
+                
+                <Label Text="Font Size:" FontSize="12" />
+                <Entry Placeholder="16" x:Name="FontSizeEntry" Keyboard="Numeric" />
+                
+                <Label Text="Padding:" FontSize="12" />
+                <Entry Placeholder="5" x:Name="PaddingEntry" Keyboard="Numeric" />
+            </StackLayout>
+        </Frame>
+        
+        <!-- Кнопки действий -->
+        <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="End">
+            <Button Text="Save Style" Clicked="OnSaveStyleClicked" />
+            <Button Text="Delete Style" Clicked="OnDeleteStyleClicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

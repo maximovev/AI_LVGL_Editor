@@ -1,0 +1,25 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2022/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LvglProjectEditor.Views.ElementEditor"
+             Title="Element Editor">
+
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,Auto">
+        <!-- Основная информация -->
+        <Frame Grid.Row="0" Grid.Column="0" Padding="10" CornerRadius="5" Margin="0,0,0,10">
+            <StackLayout Spacing="10">
+                <Entry Placeholder="Element Name" x:Name="ElementNameEntry" />
+                <Entry Placeholder="Element Type" x:Name="ElementTypeEntry" />
+                <Entry Placeholder="X Position" x:Name="XPositionEntry" Keyboard="Numeric" />
+                <Entry Placeholder="Y Position" x:Name="YPositionEntry" Keyboard="Numeric" />
+                <Entry Placeholder="Width" x:Name="WidthEntry" Keyboard="Numeric" />
+                <Entry Placeholder="Height" x:Name="HeightEntry" Keyboard="Numeric" />
+            </StackLayout>
+        </Frame>
+        
+        <!-- Кнопки действий -->
+        <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="End">
+            <Button Text="Save Element" Clicked="OnSaveElementClicked" />
+            <Button Text="Delete Element" Clicked="OnDeleteElementClicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

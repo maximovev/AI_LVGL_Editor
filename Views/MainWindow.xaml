@@ -1,0 +1,34 @@
+<maui:MauiShell xmlns="http://schemas.microsoft.com/dotnet/2022/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:local="clr-namespace:LvglProjectEditor.ViewModels"
+               x:Class="LvglProjectEditor.Views.MainWindow"
+               x:TypeArguments="local:MainWindowViewModel"
+               Title="LVGL Editor">
+
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2022/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="LvglProjectEditor.Views.MainWindow"
+                 Title="LVGL Editor">
+        
+        <Grid RowDefinitions="Auto,*" ColumnDefinitions="Auto,*" Padding="10">
+            <!-- Меню -->
+            <StackLayout RowSpan="1" ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="End" Spacing="5">
+                <Button Text="New Project" Clicked="OnNewProjectClicked" />
+                <Button Text="Open Project" Clicked="OnOpenProjectClicked" />
+                <Button Text="Save Project" Clicked="OnSaveProjectClicked" />
+            </StackLayout>
+            
+            <!-- Основной контент -->
+            <Frame Grid.Row="1" Grid.Column="1" Padding="10" CornerRadius="5" BorderColor="Gray" HasShadow="False">
+                <StackLayout Spacing="10">
+                    <Label Text="Project Name:" FontSize="14" />
+                    <Entry Placeholder="Enter project name" />
+                    
+                    <Label Text="Description:" FontSize="14" />
+                    <Entry Placeholder="Enter project description" />
+                    
+                    <Button Text="Create/Save Project" Clicked="OnCreateProjectClicked" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage>

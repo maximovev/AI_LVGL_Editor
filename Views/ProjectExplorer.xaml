@@ -1,0 +1,24 @@
+using System;
+using System.Threading.Tasks;
+using LvglProjectEditor.Models;
+
+namespace LvglProjectEditor.Views
+{
+    public partial class ProjectExplorer : ContentPage
+    {
+        public ProjectExplorer()
+        {
+            InitializeComponent();
+        }
+        
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            
+            if (IsFirstAppearingThisTime)
+            {
+                await Task.Delay(100); // Небольшая задержка для обновления UI
+            }
+        }
+    }
+}
